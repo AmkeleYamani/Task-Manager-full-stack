@@ -1,5 +1,7 @@
 package com.application.task_springboot.services.auth;
 
+import com.application.task_springboot.dto.SignUpRequest;
+import com.application.task_springboot.dto.UserDto;
 import com.application.task_springboot.entities.User;
 import com.application.task_springboot.enums.UserRole;
 import com.application.task_springboot.repositories.UserRepository;
@@ -30,5 +32,16 @@ public class AuthServiceImpl implements AuthService{
         }else {
             System.out.println("Admin account already exist!");
         }
+    }
+
+    @Override
+    public UserDto signupUser(SignUpRequest signUpRequest) {
+        User user = new User();
+        user.setEmail(signUpRequest.getEmail());
+        user.setName(signUpRequest.getName());
+        user.setPassword(new BCryptPasswordEncoder().encode(signUpRequest.getPassword()));
+        user.setUserRole(UserRole.EMPLOYEE);
+        User createdUser = userRepository.save(user);
+        return createdUser.getUserDto();
     }
 }
