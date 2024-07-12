@@ -18,8 +18,6 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
-import exp from "constants";
-
 
 
 
@@ -31,6 +29,7 @@ import exp from "constants";
         MatIconModule,
         MatToolbarModule,
         MatSelectModule,
+        MatInputModule,
         MatIconModule,
         MatProgressSpinnerModule,
         MatSnackBarModule,
