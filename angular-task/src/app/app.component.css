@@ -1,8 +1,8 @@
 .navbar {
   display: flex;
   align-items: center;
-  padding: 20px;
-  background-color: #1976d2;
+  padding: 30px;
+  background-color: #223edc;
   color: white;
 }
 
@@ -20,7 +20,7 @@ button {
   color: white;
   text-transform: uppercase;
   margin: 20px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 button.active {
