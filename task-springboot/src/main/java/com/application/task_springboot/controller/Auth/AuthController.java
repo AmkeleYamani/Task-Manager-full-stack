@@ -1,4 +1,4 @@
-package com.application.task_springboot.controller.Auth;
+package com.application.task_springboot.controller.auth;
 
 import com.application.task_springboot.dto.AuthenticationRequest;
 import com.application.task_springboot.dto.AuthenticationResponse;
