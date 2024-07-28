@@ -18,12 +18,16 @@ export class AdminService {
     })
   }
 
-  private createAuthorizationHeader(): HttpHeaders {
+  /*private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(
       'Authorization', 'Bearer' + StorageService.getToken()
     )
+  }*/
+    private createAuthorizationHeader(): HttpHeaders {
+      const token = StorageService.getToken();
+      return new HttpHeaders().set('Authorization', `Bearer ${token}`);
   }
-
+  
 }
 
 
