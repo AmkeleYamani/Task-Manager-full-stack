@@ -32,4 +32,8 @@ listOfPriorities: any = ["LOW", "MEDIUM", "HIGH"];
       console.log(res);
     })
   }
+
+  postTask(){
+    console.log(this.taskForm.value);
+  }
 }
