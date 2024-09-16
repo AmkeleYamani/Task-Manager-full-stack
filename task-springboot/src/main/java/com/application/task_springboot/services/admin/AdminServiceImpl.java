@@ -47,4 +47,9 @@ public class AdminServiceImpl implements AdminService {
         }
         return null;
     }
+
+    @Override
+    public List<TaskDto> getAllTasks() {
+        return List.of();
+    }
 }
