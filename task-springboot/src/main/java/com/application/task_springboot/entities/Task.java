@@ -34,16 +34,16 @@ public class Task {
     private  User user;
 
     public TaskDto getTaskDto(){
-        TaskDto taskDto = new TaskDto();
-        taskDto.setId(id);
-        taskDto.setTitle(title);
-        taskDto.setDescription(description);
-        taskDto.setEmployeeName(user.getName());
-        taskDto.setEmployeeId(user.getId());
-        taskDto.setTaskStatus(taskStatus);
-        taskDto.setDueDate(dueDate);
-        taskDto.setPriority(priority);
-        return taskDto;
+        TaskDto taskDTO = new TaskDto();
+        taskDTO.setId(id);
+        taskDTO.setTitle(title);
+        taskDTO.setDescription(description);
+        taskDTO.setEmployeeName(user.getName());
+        taskDTO.setEmployeeId(user.getId());
+        taskDTO.setTaskStatus(taskStatus);
+        taskDTO.setDueDate(dueDate);
+        taskDTO.setPriority(priority);
+        return taskDTO;
     }
 
 }
