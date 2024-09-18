@@ -13,4 +13,6 @@ public interface AdminService {
     TaskDto createTask(TaskDto taskDTO);
 
     List<TaskDto> getAllTasks();
+
+    void deleteTask(Long id);
 }
