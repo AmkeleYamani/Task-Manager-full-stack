@@ -3,6 +3,7 @@ package com.application.task_springboot.services.admin;
 
 import com.application.task_springboot.dto.TaskDto;
 import com.application.task_springboot.dto.UserDto;
+import org.springframework.scheduling.config.Task;
 
 import java.util.List;
 
@@ -17,4 +18,6 @@ public interface AdminService {
     void deleteTask(Long id);
 
     TaskDto getTaskById(Long id);
+
+    TaskDto updateTask(Long id, TaskDto taskDTO);
 }
