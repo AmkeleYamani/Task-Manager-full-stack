@@ -24,21 +24,24 @@ export class UpdateTaskComponent {
     private snackBar: MatSnackBar,
     private router:Router
   ) { 
-    this.getTaskById();
-    this.getUsers();
-    
+
+    // Initialize form
     this.updateTaskForm = this.fb.group({
       employeeId:[null,[Validators.required]],
       title:[null,[Validators.required]],
       description:[null,[Validators.required]],
       dueDate:[null,[Validators.required]],
       priority:[null,[Validators.required]],
-    })
+    });
+
+    // Load task data
+    this.getTaskById();
+    this.getUsers();
   }
 
   getTaskById() {
     this.service.getTaskById(this.id).subscribe((res) =>{
-      //this.updateTaskForm.patchValue(res);
+      this.updateTaskForm.patchValue(res);
       console.log(res);
     })
    }
@@ -58,7 +61,7 @@ export class UpdateTaskComponent {
       }else{
         this.snackBar.open("Something went wrong","Error",{ duration : 5000 });
       }
-    })
+    });
   }
 }
 
