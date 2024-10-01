@@ -47,10 +47,18 @@ export class AdminService {
       'Authorization', 'Bearer' + StorageService.getToken()
     )
   }*/
+
+    updateTask(id: number, taskDTO: any): Observable<any>{
+      return this.http.put(BASIC_URL + `api/admin/task/${id}`, taskDTO, {
+        headers: this.createAuthorizationHeader()
+      })
+    }
+    
     private createAuthorizationHeader(): HttpHeaders {
       const token = StorageService.getToken();
       return new HttpHeaders().set('Authorization', `Bearer ${token}`);
   }
+
   
 }
 
