@@ -54,6 +54,12 @@ export class AdminService {
       })
     }
     
+    searchTask(title: string): Observable<any>{
+      return this.http.put(BASIC_URL + `api/admin/tasks/search/${title}`, {
+        headers: this.createAuthorizationHeader()
+      })
+    }
+
     private createAuthorizationHeader(): HttpHeaders {
       const token = StorageService.getToken();
       return new HttpHeaders().set('Authorization', `Bearer ${token}`);
