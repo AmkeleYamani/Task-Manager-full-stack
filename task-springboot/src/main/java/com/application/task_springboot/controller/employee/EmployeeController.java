@@ -3,11 +3,9 @@ package com.application.task_springboot.controller.employee;
 import com.application.task_springboot.dto.TaskDto;
 import com.application.task_springboot.services.employee.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +26,14 @@ public class EmployeeController {
     @GetMapping("/tasks")
     public ResponseEntity<List<TaskDto>> getTaskByUserId() {
         return ResponseEntity.ok(employeeService.getTaskByUserId());
+    }
+
+
+    @GetMapping("/task/{id}/{status}")
+    public ResponseEntity<TaskDto> updateTask(@PathVariable Long id, @PathVariable String status) {
+        TaskDto updatedTaskDTO = employeeService.updateTask(id, status);
+        if (updatedTaskDTO == null)
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        return ResponseEntity.ok(updatedTaskDTO);
     }
 }
