@@ -31,7 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     public List<TaskDto> getTaskByUserId() {
         User user = jwtUtil.getLoggedInUser();
         if(user != null){
-            taskRepository.findAllByUserId(user.getId())
+            return taskRepository.findAllByUserId(user.getId())
                     .stream()
                     .sorted(Comparator.comparing(Task::getDueDate).reversed())
                     .map(Task::getTaskDto)
@@ -39,4 +39,5 @@ public class EmployeeServiceImpl implements EmployeeService{
         }
         throw new EntityNotFoundException("User not found");
     }
+
 }

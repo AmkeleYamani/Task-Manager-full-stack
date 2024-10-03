@@ -61,8 +61,9 @@ export class AdminService {
     }
 
     private createAuthorizationHeader(): HttpHeaders {
-      const token = StorageService.getToken();
-      return new HttpHeaders().set('Authorization', `Bearer ${token}`);
+      //const token = StorageService.getToken();
+      return new HttpHeaders().set('Authorization', `Bearer ` + StorageService.getToken()
+    );
   }
 
   
