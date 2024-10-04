@@ -1,6 +1,7 @@
 package com.application.task_springboot.services.admin;
 
 
+import com.application.task_springboot.dto.CommentDTO;
 import com.application.task_springboot.dto.TaskDto;
 import com.application.task_springboot.dto.UserDto;
 import org.springframework.scheduling.config.Task;
@@ -22,4 +23,6 @@ public interface AdminService {
     TaskDto updateTask(Long id, TaskDto taskDTO);
 
     List<TaskDto> searchTaskByTitle(String title);
+
+    CommentDTO createComment(Long taskId, String content);
 }
