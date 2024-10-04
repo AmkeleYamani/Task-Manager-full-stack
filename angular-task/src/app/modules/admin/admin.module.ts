@@ -8,13 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DemoAngularMaterialModule } from 'src/app/DemoAngularMaterialModule';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
+import { ViewTaskDetailsComponent } from './components/view-task-details/view-task-details.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     PostTaskComponent,
-    UpdateTaskComponent
+    UpdateTaskComponent,
+    ViewTaskDetailsComponent
   ],
   imports: [
     CommonModule,

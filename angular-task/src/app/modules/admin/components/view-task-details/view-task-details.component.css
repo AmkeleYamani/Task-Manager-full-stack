@@ -1,17 +1,3 @@
-.search-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-.search-form .search-input {
-  width: 300px;
-  margin-right: 15px;
-}
-.search-form .search-input .input {
-  padding-right: 40px;
-}
-
 .task-list {
   display: flex;
   flex-wrap: wrap;
@@ -57,18 +43,4 @@
 .task-list .task-card .task-details .task-info .info-row .info-value {
   font-weight: bold;
 }
-.task-list .task-card .task-details .actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-}
-.task-list .task-card .task-details .actions .view-button {
-  margin-right: 10px;
-}
-.task-list .task-card .task-details .actions .update-button {
-  margin-right: 10px;
-}
-.task-list .task-card .task-details .actions .view-button {
-  margin-right: 10px;
-}
-/*# sourceMappingURL=dashboard.component.css.map */
+/*# sourceMappingURL=view-task-details.component.css.map */
