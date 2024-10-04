@@ -43,4 +43,15 @@
 .task-list .task-card .task-details .task-info .info-row .info-value {
   font-weight: bold;
 }
+.task-list .task-card .task-details .actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.task-list .task-card .task-details .actions .update-button {
+  margin-right: 10px;
+}
+.task-list .task-card .task-details .actions .view-button {
+  margin-right: 10px;
+}
 /*# sourceMappingURL=dashboard.component.css.map */

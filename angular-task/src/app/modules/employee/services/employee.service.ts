@@ -15,12 +15,18 @@ export class EmployeeService {
     private createAuthorizationHeader(): HttpHeaders {
       //const token = StorageService.getToken();
       return new HttpHeaders().set(
-        'Authorization', `Bearer ` + StorageService.getToken()
+        'Authorization', ' Bearer ' + StorageService.getToken()
     );
   }
 
   getEmployeeTaskById():Observable<any>{
     return this.http.get(BASIC_URL + "api/employee/tasks", {
+      headers:this.createAuthorizationHeader()
+    })
+  }
+
+  updateStatus(id: number, status: String):Observable<any>{
+    return this.http.get(BASIC_URL + `api/employee/task/${id}/${status}`, {
       headers:this.createAuthorizationHeader()
     })
   }
