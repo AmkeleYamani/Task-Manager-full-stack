@@ -62,7 +62,8 @@ export class AdminService {
 
     private createAuthorizationHeader(): HttpHeaders {
       //const token = StorageService.getToken();
-      return new HttpHeaders().set('Authorization', `Bearer ` + StorageService.getToken()
+      return new HttpHeaders().set(
+        'Authorization', `Bearer ` + StorageService.getToken()
     );
   }
 
@@ -76,6 +77,11 @@ export class AdminService {
     })
   }
 
+  getCommentsByTask(id: number): Observable<any>{
+    return this.http.get(BASIC_URL + "api/admin/comments/" + id, {
+      headers: this.createAuthorizationHeader()
+    })
+  }
   
 }
 

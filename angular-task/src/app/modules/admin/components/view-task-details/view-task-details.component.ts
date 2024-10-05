@@ -13,6 +13,7 @@ export class ViewTaskDetailsComponent {
 
   taskId: number = this.activatedRoute.snapshot.params["id"];
   taskData: any;
+  comments: any;
   commentForm!: FormGroup;
 
     constructor(private service: AdminService,
@@ -25,6 +26,7 @@ export class ViewTaskDetailsComponent {
 
     ngOnInit() {
       this.getTaskById();
+      this.getComments();
       this.commentForm = this.fb.group({
         content: [null, Validators.required]
       })
@@ -36,14 +38,22 @@ export class ViewTaskDetailsComponent {
       })
     }
 
+    getComments() {
+      this.service.getCommentsByTask(this.taskId).subscribe((res)=>{
+        this.comments = res;
+      })
+    }
+
     publishComment() {
       this.service.createComment(this.taskId, this.commentForm.get("content")?.value).subscribe((res)=> {
         if (res.id != null) {
           this.snackbar.open("Comment posted Successfully", "Close", { duration: 5000 });
+          this.getComments();
         }
         else{
           this.snackbar.open("Something went wrong", "Close", { duration: 5000 });
         }
       })
     }
+    
 }
