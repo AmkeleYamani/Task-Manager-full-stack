@@ -65,4 +65,8 @@ public class AdminController {
         if(createdCommentDTO == null) return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         return ResponseEntity.status(HttpStatus.CREATED).body(createdCommentDTO);
     }
+
+    public ResponseEntity<List<CommentDTO>> getCommentByTaskId(@PathVariable Long taskId){
+        return ResponseEntity.ok(adminService.getCommentsByTaskId(taskId));
+    }
 }

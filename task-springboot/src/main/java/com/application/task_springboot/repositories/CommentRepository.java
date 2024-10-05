@@ -1,8 +1,11 @@
 package com.application.task_springboot.repositories;
 
+import com.application.task_springboot.dto.CommentDTO;
 import com.application.task_springboot.entities.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author : A.S.M.M.U.P.Adhikaram
@@ -12,4 +15,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Long> {
+    List<Comment> findAllById(Long taskId);
 }
