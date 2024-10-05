@@ -4,7 +4,7 @@
   justify-content: space-between;
   border-color: #f8f8f8;
   min-height: 37vh;
-  padding: 20px;
+  padding: 50px;
 }
 .task-list .task-card {
   width: calc(33.33% - 20px);
