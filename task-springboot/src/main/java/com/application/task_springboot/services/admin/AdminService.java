@@ -18,11 +18,11 @@ public interface AdminService {
 
     void deleteTask(Long id);
 
-    TaskDto getTaskById(Long id);
-
     TaskDto updateTask(Long id, TaskDto taskDTO);
 
     List<TaskDto> searchTaskByTitle(String title);
+
+    TaskDto getTaskById(Long id);
 
     CommentDTO createComment(Long taskId, String content);
 

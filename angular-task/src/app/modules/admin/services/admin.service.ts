@@ -36,12 +36,6 @@ export class AdminService {
     })
   }
 
-  getTaskById(id: number): Observable<any>{
-    return this.http.get(BASIC_URL + "api/admin/task/" + id, {
-      headers: this.createAuthorizationHeader()
-    })
-  }
-
   /*private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(
       'Authorization', 'Bearer' + StorageService.getToken()
@@ -67,7 +61,14 @@ export class AdminService {
     );
   }
 
-    createComment(id: number, content: string): Observable<any>{
+  
+  getTaskById(id: number): Observable<any>{
+    return this.http.get(BASIC_URL + "api/admin/task/" + id, {
+      headers: this.createAuthorizationHeader()
+    })
+  }
+
+  createComment(id: number, content: string): Observable<any>{
       const params = {
         content: content
       }
@@ -82,7 +83,6 @@ export class AdminService {
       headers: this.createAuthorizationHeader()
     })
   }
-  
 }
 
 
