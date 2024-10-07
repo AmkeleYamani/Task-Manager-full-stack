@@ -66,7 +66,8 @@ public class AdminController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdCommentDTO);
     }
 
-    public ResponseEntity<List<CommentDTO>> getCommentByTaskId(@PathVariable Long taskId){
+    @GetMapping("/comments/{taskId}")
+    public ResponseEntity<List<CommentDTO>> getCommentsByTaskId(@PathVariable Long taskId){
         return ResponseEntity.ok(adminService.getCommentsByTaskId(taskId));
     }
 }

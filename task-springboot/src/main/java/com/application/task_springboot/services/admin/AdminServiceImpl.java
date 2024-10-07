@@ -124,7 +124,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<CommentDTO> getCommentsByTaskId(Long taskId) {
-        return commentRepository.findAllById(taskId).stream().map(Comment::getCommentDTO).collect(Collectors.toList());
+        return commentRepository.findAllByTaskId(taskId).stream().map(Comment::getCommentDTO).collect(Collectors.toList());
     }
 
     private TaskStatus mapStringToTaskStatus(String status) {
