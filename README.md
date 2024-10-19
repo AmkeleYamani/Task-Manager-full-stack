@@ -15,3 +15,5 @@ Employee (Task Execution)
 • 👀 View Assigned Tasks: Employees can view tasks assigned to them via their unique user ID, ensuring focused task visibility.
 • 🚦 Update Task Status: Employees have the ability to update the progress status (e.g., 'In Progress,' 'Completed') on their tasks.
 • 💬 Post Comments to Update Admins: Employees can comment on tasks to keep Admins informed of their progress or any issues.
+
+⚙ This project streamlines task management, enhances communication, and boosts productivity by giving Admins full control while enabling Employees to focus on assigned tasks and provide regular updates.
