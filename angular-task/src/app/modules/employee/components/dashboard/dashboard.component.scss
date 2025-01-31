@@ -1,67 +1,86 @@
+/* Adds margin at the top of task list to prevent overlap */
 .task-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: #f8f8f8;
-    min-height: 37vh;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  min-height: 37vh;
+  padding: 20px;
+  margin-top: 80px; /* Adjust this based on your navbar height */
+}
 
-    .task-card{
-        width: calc(33.33% - 20px);
-        margin-bottom: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+/* Task Card Styles */
+.task-card {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: white; /* Ensure the background is not transparent */
+}
 
-        .task-details{
-            padding: 20px;
+/* Task Details */
+.task-details {
+  padding: 20px;
+}
 
-            .task-name{
-                font-size: 20px;
-                font-weight: bold;
-                color: #108ee9;
-                margin-bottom: 10px;
-            }
+.task-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #108ee9;
+  margin-bottom: 10px;
+}
 
-            .task-description{
-                margin-bottom: 10px;
-            }
+.task-description {
+  margin-bottom: 10px;
+}
 
-            .task-info{
-                display: flex;
-                flex-wrap: wrap;
-                margin-bottom: 10px;
-                margin-top: 10px;
+/* Task Info Styling */
+.task-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 
-                .info-row{
-                    flex: 0 0 50%;
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 8px;
+.info-row {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
 
-                    .info-label{
-                        font-weight: 10px;
-                        margin-right: 5px;
-                    }
+.info-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
 
-                    .info-value{
-                        font-weight: bold;
-                    }
-                }
-            }
+.info-value {
+  font-weight: bold;
+}
 
-          .actions {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
+/* Actions Buttons Styling */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
 
-            .update-button{
-                margin-right: 10px;
-            }
+.update-button {
+  margin-right: 10px;
+}
 
-            .view-button {
-                margin-right: 10px;
-            }
-          }  
-        }
-    }
+.view-button {
+  margin-right: 10px;
+}
+
+/* Adjust Navbar if it's fixed */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Keeps navbar above content */
+  background-color: #fff; /* Optional: set navbar background color */
+  padding: 10px 0;
+  height: 60px; /* Ensure this matches your navbar height */
 }

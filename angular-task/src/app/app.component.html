@@ -1,28 +1,42 @@
-<div *ngIf= "!isEmployeeLoggedIn && !isAdminLoggedIn">
-  <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">Task Management System</span>
+<div *ngIf="!isEmployeeLoggedIn && !isAdminLoggedIn">
+  <mat-toolbar class="navbar">
+    <span class="navbar-brand">Innovation Task Manager</span>
     <span class="spacer"></span>
-    <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
-    <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+    <button mat-button routerLink="/signup" routerLinkActive="active">
+      <mat-icon>person_add</mat-icon> Create an account
+    </button>
+    <button mat-button routerLink="/login" routerLinkActive="active">
+      <mat-icon>login</mat-icon> Login
+    </button>
   </mat-toolbar>
 </div>
 
-<div *ngIf= "isAdminLoggedIn">
-  <mat-toolbar color="primary" class="navbar">
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar class="navbar">
     <span class="navbar-brand">Admin</span>
     <span class="spacer"></span>
-    <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</button>
-    <button mat-button routerLink="/admin/task" routerLinkActive="active">Post Task</button>
-    <button mat-button (click)= "logout()" routerLinkActive="active">Logout</button>
+    <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">
+      <mat-icon>dashboard</mat-icon> Dashboard
+    </button>
+    <button mat-button routerLink="/admin/task" routerLinkActive="active">
+      <mat-icon>assignment</mat-icon> Task
+    </button>
+    <button mat-button (click)="logout()" routerLinkActive="active">
+      <mat-icon>logout</mat-icon> Logout
+    </button>
   </mat-toolbar>
 </div>
 
-<div *ngIf= "isEmployeeLoggedIn">
-  <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">Employee</span>
+<div *ngIf="isEmployeeLoggedIn">
+  <mat-toolbar class="navbar">
+    <span class="navbar-brand">User</span>
     <span class="spacer"></span>
-    <button mat-button routerLink="/employee/dashboard" routerLinkActive="active">Dashboard</button>
-    <button mat-button (click)= "logout()" routerLinkActive="active">Logout</button>
+    <button mat-button routerLink="/employee/dashboard" routerLinkActive="active">
+      <mat-icon>dashboard</mat-icon> Dashboard
+    </button>
+    <button mat-button (click)="logout()" routerLinkActive="active">
+      <mat-icon>logout</mat-icon> Logout
+    </button>
   </mat-toolbar>
 </div>
 

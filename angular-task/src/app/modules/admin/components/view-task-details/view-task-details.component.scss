@@ -1,103 +1,136 @@
-.task-list{
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to the left */
+  gap: 20px; /* Adds space between cards */
+}
+
+.task-card {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.task-details {
+  padding: 10px 0;
+
+  .task-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #108ee9;
+    margin-bottom: 10px;
+  }
+
+  .task-description {
+    margin-bottom: 10px;
+  }
+
+  .task-info {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    //border-color: #f8f8f8;
-    min-height: 37vh;
-    //padding: 50px;
-
-    .task-card{
-        //width: calc(33.33% - 20px);
-        margin-bottom: 20px;
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-
-        .task-details {
-            padding: 20px;
-
-            .task-name {
-                font-size: 20px;
-                font-weight: bold;
-                color: #108ee9;
-                margin-bottom: 10px;
-            }
-
-            .task-description {
-                margin-bottom: 10px;
-            }
-
-            .task-info{
-                display: flex;
-                flex-wrap: wrap;
-                margin-bottom: 10px;
-                margin-top: 10px;
-
-                .info-row{
-                    flex: 0 0 50%;
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 8px;
-
-                .info-label{
-                    font-weight: 10px;
-                    margin-right: 5px;
-                }
-
-                .info-value{
-                    font-weight: bold;
-                }
-            }
-        }
-
-        .actions {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-
-        .update-button {
-            margin-right: 10px;
-        }
-
-        .view-button {
-            margin-right: 10px;
-            }
-          }
-       }
-    }
-}
-
-.card-container {
-    margin: 16px;
-    max-width: 40%;
-    padding-bottom: 30px;
-}
-
-mat-card{
-    padding: 10px;
-}
-
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-}
-
-mat-card-content {
+    gap: 15px; /* Space between info rows */
+    margin-bottom: 10px;
     margin-top: 10px;
-}
+  }
 
-mat-card-footer {
-    margin-left: 20px;
-}
+  .info-row {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
 
-.img {
-    object-fit: cover;
+  .info-label {
+    font-weight: normal;
+    margin-right: 5px;
+  }
+
+  .info-value {
+    font-weight: bold;
+  }
 }
 
 .comment-card {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 mat-form-field {
+  width: 100%;
+}
+
+.card-container {
+  margin: 16px;
+  max-width: 100%;
+  padding-bottom: 30px;
+  padding-top: 80px; /* Adds space between navbar and card */
+
+}
+
+mat-card {
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 40px; /* Set height for avatar */
+  width: 40px;
+  border-radius: 50%;
+}
+
+mat-card-content {
+  margin-top: 10px;
+}
+
+mat-card-footer {
+  margin-left: 20px;
+}
+
+button[type="submit"] {
+  width: 50%;
+  background: rgb(28, 28, 191);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h4 {
+  margin-bottom: 20px;
+}
+
+mat-card-header {
+  margin-bottom: 10px;
+}
+
+mat-card-title {
+  font-weight: bold;
+}
+
+mat-card-subtitle {
+  color: gray;
+  font-size: 14px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .task-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .task-card {
     width: 100%;
+    max-width: 100%;
+  }
+
+  .card-container {
+    max-width: 100%;
+  }
 }
